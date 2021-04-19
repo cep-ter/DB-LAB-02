@@ -8,6 +8,7 @@ import GenreModule from './genre/genre.module';
 import { BookEntity } from './db/entity/book.entity';
 import { GenreEntity } from './db/entity/genre.entity';
 import { UserEntity } from './db/entity/user.entity';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -17,6 +18,8 @@ import { UserEntity } from './db/entity/user.entity';
     TypeOrmModule.forFeature([UserEntity, BookEntity, GenreEntity]),
 
     TypeOrmModule.forRoot(),
+
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
