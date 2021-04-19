@@ -1,6 +1,8 @@
 import { BooksService } from './books.service';
-import CreateBookDto from './dto/create-book.dto';
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { CreateBookDto } from './dto/create-book.dto';
+import { Body, Controller, Delete, Get, Post, Put } from '@nestjs/common';
+import { DeleteBookDto } from './dto/delete-book.dto';
+import { PutBookDto } from './dto/put-book.dto';
 
 @Controller('book')
 export class BooksController {
@@ -12,5 +14,15 @@ export class BooksController {
   @Get()
   getAll() {
     return this.booksService.getAllBooks();
+  }
+
+  @Delete()
+  DeleteBook(@Body() book: DeleteBookDto) {
+    return this.booksService.deleteBook(book);
+  }
+
+  @Put()
+  putBook(@Body() book: PutBookDto) {
+    return this.booksService.putBook(book);
   }
 }
