@@ -1,9 +1,7 @@
-import { Injectable, UseGuards } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import CreateUserDto from './dto/create-user.dto';
 import { BookEntity } from '../db/entity/book.entity';
 import { UserEntity } from '../db/entity/user.entity';
-import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
-import { ApiBearerAuth } from '@nestjs/swagger';
 
 @Injectable()
 export class UserService {
@@ -15,14 +13,10 @@ export class UserService {
     return userEntity;
   }
 
-  @ApiBearerAuth()
-  @UseGuards(JwtAuthGuard)
   async getAllUsers(): Promise<UserEntity[]> {
     return await UserEntity.find();
   }
 
-  @ApiBearerAuth()
-  @UseGuards(JwtAuthGuard)
   async getBooksOfUser(userID: number): Promise<BookEntity[]> {
     console.log(typeof userID);
     const user: UserEntity = await UserEntity.findOne({
