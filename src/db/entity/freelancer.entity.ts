@@ -37,8 +37,6 @@ export default class FreelancerEntity extends BaseEntity {
   @Column({ length: 500 })
   score: string;
 
-  @Column({ length: 500 })
-  account_type: string;
 
   @OneToOne(() => ResumeEntity, (resume) => resume.freelancer) // specify inverse side as a second parameter
   @JoinColumn()

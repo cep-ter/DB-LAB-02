@@ -21,37 +21,31 @@ export default class CreateFreelancerDto {
   readonly last_name: string;
 
   @ApiProperty({
-    description: 'Enter username of the freelancer',
+    description: 'Enter username',
     type: 'string',
   })
   readonly username: string;
 
   @ApiProperty({
-    description: 'Enter password of the freelancer',
+    description: 'Enter password',
     type: 'string',
   })
   readonly password: string;
 
-  @ApiProperty({ description: 'Enter email of the freelancer', type: 'string' })
+  @ApiProperty({ description: 'Enter email', type: 'string' })
   readonly email: string;
 
   @Length(11, 11)
   @ApiProperty({
-    description: 'Enter password of the freelancer',
+    description: 'Enter password',
     type: 'string',
     minLength: 11,
     maxLength: 11,
   })
   readonly phone_number: string;
 
-  @ApiProperty({ description: 'Enter score of the freelancer', type: 'string' })
+  @ApiProperty({ description: 'Enter score', type: 'string' })
   readonly score: string;
-
-  @ApiProperty({
-    description: 'Enter account type of the freelancer',
-    type: 'string',
-  })
-  readonly account_type: string;
 
   @ApiProperty({
     description: "Enter the resume id of freelancer' >",

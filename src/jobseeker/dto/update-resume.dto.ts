@@ -28,6 +28,6 @@ export default class UpdateResumeDto {
   @ApiProperty({ description: 'Enter sample work', type: 'string' })
   readonly sample_work: string;
 
-  @ApiProperty({ description: 'Enter the id of owner', type: 'number' })
+  @ApiProperty({ description: 'Enter id of owner', type: 'number' })
   readonly freelancer: number;
 }

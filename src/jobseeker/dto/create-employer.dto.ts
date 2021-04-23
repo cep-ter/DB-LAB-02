@@ -34,7 +34,7 @@ export default class CreateEmployerDto {
 
   @Length(15, 15)
   @ApiProperty({
-    description: 'Enter password ',
+    description: 'Enter password',
     type: 'string',
     minLength: 15,
     maxLength: 15,
@@ -42,7 +42,7 @@ export default class CreateEmployerDto {
   readonly phone_number: string;
 
   @ApiProperty({
-    description: 'Enter the IDs of employer',
+    description: 'Enter ID of employer',
     type: 'array',
     items: { type: 'number' },
   })

@@ -25,7 +25,7 @@ export default class UpdateProjectDto {
   })
   readonly skills: string;
 
-  @ApiProperty({ description: 'Enter the ID of the employer', type: 'number' })
+  @ApiProperty({ description: 'Enter the ID of employer', type: 'number' })
   readonly employer: number;
 
   @ApiProperty({ description: 'Enter the ID of freelancer', type: 'number' })
