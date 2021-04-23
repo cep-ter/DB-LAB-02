@@ -11,6 +11,7 @@ import { UserEntity } from './db/entity/user.entity';
 import { AuthModule } from './auth/auth.module';
 import { JwtAuthGuard } from './auth/jwt-auth.guard';
 import { APP_GUARD } from '@nestjs/core';
+import { JobseekerModule } from './jobseeker/jobseeker.module';
 @Module({
   imports: [
     UserModule,
@@ -21,6 +22,7 @@ import { APP_GUARD } from '@nestjs/core';
     TypeOrmModule.forRoot(),
 
     AuthModule,
+    JobseekerModule,
   ],
   controllers: [AppController],
   providers: [

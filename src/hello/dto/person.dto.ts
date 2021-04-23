@@ -2,12 +2,12 @@ import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 import { Length, IsOptional, Min, IsNumber } from 'class-validator';
 
 export class PersonDto {
-  @Length(3, 10)
+  @Length(5, 20)
   @ApiProperty({
-    description: 'Enter Your Name > ',
-    minLength: 3,
+    description: 'Enter Your Name',
+    minLength: 5,
     default: 'Ali',
-    maxLength: 10,
+    maxLength: 20,
   })
   name: string;
 
