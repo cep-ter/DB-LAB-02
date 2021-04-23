@@ -7,8 +7,14 @@ import { UserEntity } from '../db/entity/user.entity';
 export class UserService {
   async insert(userDetails: CreateUserDto): Promise<UserEntity> {
     const userEntity: UserEntity = UserEntity.create();
-    const { name } = userDetails;
+    const { name, books, username, password } = userDetails;
     userEntity.name = name;
+    userEntity.username = username;
+    userEntity.password = password;
+    for (let i = 0; i < books.length; i++) {
+      const book = await BookEntity.findOne(books[i]);
+      userEntity.books.push(book);
+    }
     await UserEntity.save(userEntity);
     return userEntity;
   }
