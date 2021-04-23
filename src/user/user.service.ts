@@ -31,4 +31,8 @@ export class UserService {
     });
     return user.books;
   }
+
+  async findOne(username: string): Promise<UserEntity | undefined> {
+    return await UserEntity.findOne({ where: { username: username } });
+  }
 }
